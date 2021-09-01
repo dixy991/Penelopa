@@ -1,0 +1,1190 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@-webkit-keyframes flash {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  50% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  color: #141414;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+body #pozadinskaSlika {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/mainbg.jpg");
+  background-position: center;
+}
+
+body #prekrivac {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+body #preloader {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: fixed;
+  background-color: #fff;
+}
+
+body #preloader .animation {
+  position: fixed;
+  top: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #e91e63;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: opacity 1s 5s, -webkit-transform 5s ease-in;
+  transition: opacity 1s 5s, -webkit-transform 5s ease-in;
+  transition: transform 5s ease-in, opacity 1s 5s;
+  transition: transform 5s ease-in, opacity 1s 5s, -webkit-transform 5s ease-in;
+}
+
+body #navigacija {
+  width: 30%;
+  float: left;
+}
+
+body #navigacija nav {
+  padding: 0px 15px;
+  min-height: 50px;
+  margin-bottom: 20px;
+  position: fixed;
+  display: block;
+  top: 50%;
+  left: 130px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 4px;
+  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+body #navigacija nav ul li {
+  width: 50px;
+  height: 7px;
+  display: block;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+body #navigacija nav ul li span {
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  left: 90px;
+  -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  position: absolute;
+  opacity: 0;
+}
+
+body #navigacija nav ul li a {
+  color: #e7e7e7;
+}
+
+body #navigacija nav ul li a span {
+  display: none;
+}
+
+body #navigacija nav ul li a::after {
+  content: "";
+  border: 3px solid #fff;
+  background: #fff none repeat scroll 0 0;
+  border-radius: 50%;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
+}
+
+body #navigacija nav ul li a::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-color: #fff;
+  opacity: 1;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+body #navigacija nav ul li:hover span {
+  left: 50px;
+  opacity: 1;
+}
+
+body #navigacija nav ul .active a::after {
+  background: transparent none repeat scroll 0 0;
+  width: 4px;
+  height: 4px;
+  border-width: 2px;
+}
+
+body #navigacija nav ul .active a::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+}
+
+body #navigacija nav ul .active span {
+  left: 50px;
+  opacity: 1;
+}
+
+body #omotac {
+  width: 66.6%;
+  float: right;
+  position: relative;
+}
+
+body #omotac .omot,
+body #omotac section {
+  width: 83.3%;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+body #omotac .fixedNav {
+  background-color: #141414;
+  position: fixed;
+  top: -70px;
+  right: 0;
+  width: 66.6%;
+  margin-top: 70px;
+  -webkit-transition: margin 0.6s ease 0s, -webkit-transform 0.6s ease 0s;
+  transition: margin 0.6s ease 0s, -webkit-transform 0.6s ease 0s;
+  transition: margin 0.6s ease 0s, transform 0.6s ease 0s;
+  transition: margin 0.6s ease 0s, transform 0.6s ease 0s, -webkit-transform 0.6s ease 0s;
+  z-index: 99;
+}
+
+body #omotac .fixedNav .omot a:last-of-type {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e91e63), color-stop(50%, #fff));
+  background: linear-gradient(to right, #e91e63 50%, #fff 50%);
+  background-size: 200%;
+  background-position: right;
+  color: #141414;
+  -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+body #omotac .fixedNav .omot a:last-of-type:hover {
+  background-position: left;
+  color: #fff;
+}
+
+body #omotac header {
+  height: 70px;
+}
+
+body #omotac header .omot {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #omotac header .omot .navbar-collapse {
+  display: none;
+  z-index: 99;
+  position: inherit;
+  width: 100%;
+  background-color: #141414;
+  padding: 0px 15px 15px 15px;
+}
+
+body #omotac header .omot .navbar-collapse span {
+  font-size: 11px;
+  color: #fff;
+}
+
+body #omotac header .omot .navbar-collapse ul li > span {
+  display: none;
+}
+
+body #omotac header .omot span {
+  font-size: 25px;
+  display: none;
+  color: #141414;
+}
+
+body #omotac header .omot a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+body #omotac header .omot a:nth-child(2) {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, white), color-stop(50%, black));
+  background: linear-gradient(to right, white 50%, black 50%);
+  background-size: 200%;
+  background-position: right;
+  color: white;
+  -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  border-radius: 2px;
+  padding: 11px 20px;
+  color: #fff;
+  font-size: 80%;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+body #omotac header .omot a:nth-child(2):hover {
+  background-position: left;
+  color: black;
+}
+
+body #omotac header .omot a:nth-child(2) b {
+  font-weight: 500;
+}
+
+body #omotac header .omot button {
+  padding: 7px 8px;
+  border-radius: 2px;
+  border: none;
+  display: none;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e91e63), color-stop(50%, #fff));
+  background: linear-gradient(to right, #e91e63 50%, #fff 50%);
+  background-size: 200%;
+  background-position: right;
+  color: #141414;
+  -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+body #omotac header .omot button:hover {
+  background-position: left;
+  color: #fff;
+}
+
+body #omotac header .omot button:hover {
+  cursor: pointer;
+}
+
+body #omotac header .omot button:hover span {
+  color: #fff;
+}
+
+body #omotac main {
+  margin-top: 80px;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+}
+
+body #omotac main #author {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/candidate.png");
+  background-position: center;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+body #omotac main h1 {
+  font-size: 45px;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 30px 0px 75px 0px;
+}
+
+body #omotac main h1 .typed-cursor {
+  -webkit-animation: blink 0.7s infinite;
+          animation: blink 0.7s infinite;
+  opacity: 1;
+}
+
+body #omotac main .separater {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+body #omotac main section {
+  padding: 80px 15px;
+}
+
+body #omotac main section p {
+  color: #777;
+  font-family: "Hind", sans-serif;
+  font-size: 16px;
+  letter-spacing: initial;
+  font-weight: normal;
+  text-transform: none;
+  margin-bottom: 40px;
+}
+
+body #omotac main section h3 {
+  color: #e91e63;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 33px;
+}
+
+body #omotac main section:nth-child(1) figure {
+  margin-top: 50px;
+}
+
+body #omotac main section:nth-child(1) a {
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+body #omotac main section:nth-child(1) p:first-of-type {
+  margin-bottom: 35px;
+}
+
+body #omotac main section:nth-of-type(3) #progressContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+body #omotac main section:nth-of-type(3) #progressContainer .progress {
+  width: 40%;
+  margin-bottom: 50px;
+}
+
+body #omotac main section:nth-of-type(3) #progressContainer .progress span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+body #omotac main section:nth-of-type(3) #progressContainer .progress .bar span {
+  display: block;
+  background-color: #e91e63;
+  height: 3px;
+  position: relative;
+  margin-top: 10px;
+  width: 0px;
+  opacity: 0;
+}
+
+body #omotac main section:nth-of-type(3) #progressContainer .progress .bar span::after {
+  background-color: #fff;
+  border: 3px solid #e91e63;
+  border-radius: 50%;
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: -1px;
+  top: -6px;
+}
+
+body #omotac main section:nth-of-type(3) #progressContainer .progress .bar span strong {
+  font-weight: 500;
+  position: absolute;
+  top: -27px;
+  right: 0px;
+}
+
+body #omotac main section #work {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+body #omotac main section #work .icon {
+  color: #c0c1c1;
+  font-size: 60px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  text-transform: none;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+body #omotac main section #work .work-icon:hover .icon {
+  color: #000000;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body #omotac main section #work p {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 36px;
+}
+
+body #omotac main section #grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  width: 100%;
+}
+
+body #omotac main section #grid-container .grid-column {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #omotac main section #grid-container .grid-column .grid-item {
+  border-radius: 5px;
+  margin: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+body #omotac main section #grid-container .grid-column .grid-item img {
+  width: 100%;
+  border-radius: 5px;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+body #omotac main section #grid-container .grid-column .grid-item figcaption {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #fff none repeat scroll 0 0;
+  text-align: center;
+  height: 55px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 20px;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  -webkit-transform: translateY(75px);
+          transform: translateY(75px);
+}
+
+body #omotac main section #grid-container .grid-column .grid-item:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+body #omotac main section #grid-container .grid-column .grid-item:hover img {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+body #omotac main section #grid-container .grid-column .grid-item:hover figcaption {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+body #omotac main section:nth-of-type(5) table {
+  border-collapse: collapse;
+}
+
+body #omotac main section:nth-of-type(5) table tbody tr:nth-child(2) {
+  background-color: rgba(48, 49, 51, 0.04);
+}
+
+body #omotac main section:nth-of-type(5) table tbody tr td {
+  border-top: 1px solid rgba(48, 49, 51, 0.1);
+  border-bottom: 1px solid rgba(48, 49, 51, 0.1);
+  padding: 30px;
+  font-family: "Hind", sans-serif;
+}
+
+body #omotac main section:nth-of-type(5) table tbody tr td:nth-child(odd) {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body #omotac main section:nth-of-type(5) table tbody tr td:nth-child(even) {
+  width: 19%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+body #omotac main section:nth-of-type(5) table tbody tr td:last-of-type {
+  color: #777;
+  font-size: 14px;
+  width: 25%;
+}
+
+body #omotac main section:nth-of-type(5) table tbody tr td:first-of-type span {
+  border: 1px solid rgba(48, 49, 51, 0.1);
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  display: block;
+  padding-top: 7px;
+  border-radius: 50%;
+}
+
+body #omotac main section #timeline .row-timeline {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-line {
+  width: 16.6%;
+  position: relative;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-line .line {
+  height: 94%;
+  background: rgba(48, 49, 51, 0.15);
+  width: 1px;
+  margin: 15px 0px 0px 7px;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-line .line::after {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  border: 3px solid rgba(48, 49, 51, 0.15);
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content {
+  width: 83.3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-period {
+  width: 25%;
+  padding: 0px 15px;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-period span {
+  font-family: "Hind", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-desc {
+  width: 75%;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-desc span {
+  display: block;
+  font-family: "Hind", sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-desc span:nth-child(1) {
+  color: #777;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-desc span:nth-child(2) {
+  color: #141414;
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+body #omotac main section #timeline .row-timeline .timeline-content .timeline-desc p {
+  font-size: 14px;
+  line-height: 27px;
+}
+
+body #omotac main section #timeline .timeline-active {
+  opacity: 1;
+}
+
+body #omotac main section #timeline .timeline-active .timeline-line .line::after {
+  border: 3px solid #e91e63;
+}
+
+body #omotac main section #timeline .timeline-inactive {
+  opacity: 0.3;
+}
+
+body #omotac main section #clientsCarousel figure img {
+  width: auto;
+}
+
+body #omotac main section #clientsCarousel .owl-nav,
+body #omotac main section #clientsCarousel .owl-dots {
+  display: none;
+}
+
+body #omotac main section:nth-of-type(8) p + ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+body #omotac main section:nth-of-type(8) p + ul > li {
+  width: 50%;
+}
+
+body #omotac main section:nth-of-type(8) p + ul > li ul li {
+  font-family: "Hind", sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+body #omotac main section:nth-of-type(8) p + ul > li ul li span:first-child {
+  margin-right: 30px;
+  float: left;
+}
+
+body #omotac main section:nth-of-type(8) p + ul > li ul li span:last-child {
+  width: 70%;
+  display: inline-block;
+}
+
+body #omotac main section:nth-of-type(9) h6 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 500;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
+body #omotac main section:nth-of-type(9) form .group-text {
+  width: 50%;
+  float: left;
+  margin-bottom: 36px;
+  padding-right: 15px;
+  position: relative;
+}
+
+body #omotac main section:nth-of-type(9) form .group-text input,
+body #omotac main section:nth-of-type(9) form .group-text + .form-item > textarea {
+  background: transparent none repeat scroll 0 0;
+  border: none;
+  border-bottom: 2px solid #eee;
+  height: 80px;
+  width: 100%;
+  padding: 13px 0px 18px 0px;
+  font-size: 13px;
+  font-family: "Hind", sans-serif;
+}
+
+body #omotac main section:nth-of-type(9) form .group-text input:focus,
+body #omotac main section:nth-of-type(9) form .group-text + .form-item > textarea:focus {
+  outline: none;
+}
+
+body #omotac main section:nth-of-type(9) form .group-text input:focus + .black-border,
+body #omotac main section:nth-of-type(9) form .group-text + .form-item > textarea:focus + .black-border {
+  width: 95%;
+}
+
+body #omotac main section:nth-of-type(9) form .form-item {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+body #omotac main section:nth-of-type(9) form .form-item textarea {
+  height: 100px !important;
+}
+
+body #omotac main section:nth-of-type(9) form .form-item textarea + .black-border {
+  bottom: 5px !important;
+}
+
+body #omotac main section:nth-of-type(9) form .form-item textarea:focus + .black-border {
+  width: 100% !important;
+}
+
+body #omotac main section:nth-of-type(9) form .black-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  border-bottom: 2px solid black;
+  -webkit-transition: width ease-in-out 0.3s;
+  transition: width ease-in-out 0.3s;
+}
+
+body #omotac main section:nth-of-type(9) form button {
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #141414;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 60px;
+  border-radius: 2px;
+  height: 37px;
+  padding: 7px 20px;
+  -webkit-transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, black), color-stop(50%, #e91e63));
+  background: linear-gradient(to left, black 50%, #e91e63 50%);
+  background-size: 200%;
+  background-position: right;
+}
+
+body #omotac main section:nth-of-type(9) form button:hover {
+  background-position: left;
+}
+
+body #omotac main section:nth-of-type(9) form + p > a {
+  color: #141414;
+  font-weight: 500;
+}
+
+body #omotac main section:nth-of-type(9) form + p {
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+
+body #omotac main footer {
+  padding: 80px 15px;
+  width: 83.3%;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+body #omotac main footer #available-pointer {
+  padding-bottom: 30px;
+}
+
+body #omotac main footer #available-pointer span {
+  display: inline-block;
+  background: #e91e63 none repeat scroll 0 0;
+  width: 14px;
+  height: 14px;
+  margin: 7px 32px 0px 8px;
+  border-radius: 50%;
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  position: relative;
+  float: left;
+}
+
+body #omotac main footer #available-pointer span::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background-color: #e91e63;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+body #omotac main footer #available-pointer p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+body #omotac main footer div {
+  width: 50%;
+}
+
+body #omotac main footer div:last-child {
+  text-align: right;
+}
+
+body #omotac main footer div:last-child p:last-child {
+  color: #777;
+  font-family: "Hind", sans-serif;
+  font-size: 11px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+body #omotac main footer div:last-child p:last-child b {
+  color: #141414;
+  font-weight: 500;
+}
+
+body #omotac main footer div ul li {
+  display: inline-block;
+  overflow: hidden;
+}
+
+body #omotac main footer div ul li:not(:last-child) {
+  margin-right: 10px;
+}
+
+body #omotac main footer div ul li a {
+  padding: 5px;
+  color: #141414;
+  line-height: 25px;
+}
+
+body #omotac main footer div ul li a:hover .fa {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+}
+
+body #omotac main footer div ul li a .fa {
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+body #omotac main footer div ul li a .fa::after {
+  content: attr(data-icon);
+  display: inline-block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+body #omotac main footer div ul li a:not(:last-child) {
+  padding-right: 0px;
+}
+
+body #omotac main footer div ul + p {
+  font-size: 11px;
+  overflow: hidden;
+}
+
+body #omotac main footer div ul + p a {
+  text-transform: uppercase;
+  position: relative;
+  color: #141414;
+}
+
+body #omotac main footer div ul + p a:hover span {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+body #omotac main footer div ul + p a span {
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  display: inline-block;
+  text-decoration: underline;
+  height: 100%;
+}
+
+body #omotac main footer div ul + p a span::after {
+  content: attr(data-hover);
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 100%;
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  body #pozadinskaSlika {
+    display: none;
+  }
+  body #navigacija {
+    display: none;
+  }
+  body #omotac {
+    width: 100%;
+  }
+  body #omotac .fixedNav {
+    width: 100%;
+  }
+  body #omotac header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background-color: #141414;
+  }
+  body #omotac header .omot {
+    width: 100%;
+    padding: 0px;
+  }
+  body #omotac header .omot .active span {
+    color: #777 !important;
+  }
+  body #omotac header .omot button {
+    margin-right: 15px;
+    display: block;
+  }
+  body #omotac header .omot a:nth-child(1) {
+    -ms-flex-preferred-size: 85%;
+        flex-basis: 85%;
+    margin-left: 15px;
+  }
+  body #omotac header .omot a:nth-child(2) {
+    margin-right: 15px;
+    padding: 7px 8px;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e91e63), color-stop(50%, #fff));
+    background: linear-gradient(to right, #e91e63 50%, #fff 50%);
+    background-size: 200%;
+    background-position: right;
+  }
+  body #omotac header .omot a:nth-child(2):hover span {
+    color: #fff;
+  }
+  body #omotac header .omot a:nth-child(2) b {
+    display: none;
+  }
+  body #omotac header .omot span {
+    display: block;
+  }
+  body #omotac main {
+    margin-top: 70px;
+    border-radius: 0;
+  }
+  body #omotac main section {
+    width: 91.6%;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 865px) {
+  body #omotac header .omot a:nth-child(1) {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+  body #omotac main footer {
+    width: 91.6%;
+  }
+  body #omotac main footer div {
+    width: 100% !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 736px) {
+  body #omotac header {
+    height: 50px;
+  }
+  body #omotac header .omot button,
+  body #omotac header .omot a {
+    padding: 3px !important;
+  }
+  body #omotac .fixedNav {
+    height: 50px;
+  }
+  body #omotac .fixedNav .omot a {
+    font-size: 13px;
+  }
+  body #omotac main {
+    margin-top: 50px;
+  }
+  body #omotac main h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 50px;
+  }
+  body #omotac main #achievements p + ul > li {
+    width: 100% !important;
+  }
+  body #omotac main #contact form .group-text {
+    width: 100% !important;
+  }
+  body #omotac main #education {
+    overflow-x: auto;
+  }
+  body #omotac main section {
+    width: 100%;
+  }
+  body #omotac main section #progressContainer .progress {
+    width: 100% !important;
+  }
+  body #omotac main section #grid-container .grid-column {
+    width: 100%;
+  }
+  body #omotac main section #timeline .row-timeline .timeline-content .timeline-period,
+  body #omotac main section #timeline .row-timeline .timeline-content .timeline-desc {
+    width: 100%;
+    padding: 0px;
+  }
+  body #omotac main section #work .work-icon {
+    width: 50%;
+  }
+  body #omotac main section #work .work-icon:nth-child(even) {
+    text-align: center;
+  }
+  body #omotac main footer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  body #omotac header .omot a:nth-child(1) {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+}
+
+@media (max-width: 360px) {
+  body #omotac header .omot a:nth-child(1) {
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

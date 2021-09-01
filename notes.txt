@@ -1,0 +1,27 @@
+html:
+-kada klase kada tabela (zbog resposiva)
+-flex/grid/float (responsive!)
+-pe-icons
+css:
+-on hover gradijent
+-animacije (blink)
+-transofrm (rotacije, Y, scale)
+-overflow hidden
+-after/before
+-transitions - efekti
+-owl carousel plugin
+-outline u formi
+-on focus width
+-span/hr linije
+-after: content attr (iz html-a - data-nesto) sadrzaj je ta ista ikonica koja je sakrivena a na hover transformY (ima heksadecimalni zapis ikonice na netu)
+-display inline-block(content) vs block
+js:
+-za responsive window.innerWidth
+-za prilagodjavanje navigacije kontentu - naci sve sekcije i kroz petlju uzeti offsetTop i clientHeight, pa ako je offset stranice veci uzeti trenutni id sekcije, i petljom kroz navigacioni Li proveriti da li je data attr isti
+kao trenutni id sekcije te dodati klasu active
+-settimeout/setinterval
+-ispisati tekst slovo po slovo - pocetak je od 0 ,a tekst u js, pa ici od 0 do duzine teksta i dodavati na element u kojem se ispisuje tekst od 0, pa povecavati tu 0, a pozivati tu istu funkciju pomocu settimeout odredjenom brzinom
+-prikazivanje u zavisnosti od skrola - samo proveriti pageYoffset koliki je
+-ne kopirati neke elemente zbog responsive-a vec u js-u appendovati vec postojeci
+-tek kad dodje do tog elementa sekcije pokrenuti animaciju (i to samo jednom) - pomocu jquery-ja, isto se proverava da li je offsetY veci od sectionoffset - sheight i za svaki animirati (ako hocemo jedan po jedan dodati delay koji se povecava nakon svakog elementa) i da bude jednom - window.off
+-ugradjen slideToggle
